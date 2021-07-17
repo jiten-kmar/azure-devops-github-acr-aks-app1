@@ -77,15 +77,15 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 - stage: DeploytoTest
-  displayName: Deploy stage
+  displayName: Deploy to Test
   dependsOn: DeploytoDev
 
   jobs:
   - deployment: Deploy
-    displayName: Deploy
+    displayName: Deploy to Test
     pool:
       vmImage: $(vmImageName)
-    environment: 'TestEnvironment'
+    environment: 'jitender1278azuredevopsgithubacraksapp1.test'
     strategy:
       runOnce:
         deploy:
